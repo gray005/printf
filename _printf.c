@@ -5,7 +5,7 @@ void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - Printf function
  * @format: format.
- * by Cyrus and Grace
+ * by Joseph and Ciny
  * Return: Printed chars.
  */
 int _printf(const char *format, ...)
@@ -37,7 +37,8 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &i, list);
 			size = get_size(format, &i);
 			++i;
-			printed = handle_print(format, &i, list, buffer, flags, width, precision, size);
+			printed = handle_print(format, &i, list, buffer, flags,
+					width, precision, size);
 			if (printed == -1)
 				return (-1);
 			printed_chars += printed;
