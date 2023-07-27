@@ -151,8 +151,8 @@ int print_rot13string(va_list types, char buffer[], int flags,
 	char *str;
 	unsigned int i, j;
 	int count = 0;
-	unsigned char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	unsigned char out[] = "NOPQRSTUVWXYZABEDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char out[] = "NOPQRSTUVWXYZABEDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(types, char *);
 
