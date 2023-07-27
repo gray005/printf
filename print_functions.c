@@ -55,7 +55,7 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
 	{
 		if (flags & F_MINUS)
 		{
-			write(1, &str[0, length);
+			write(1, &str[0], length);
 			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
 			return (width);
@@ -84,6 +84,7 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
 int print_percent(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 	UNUSED(types);
+	UNUSED(buffer);
 	UNUSED(flags);
         UNUSED(width);
         UNUSED(precision);
@@ -92,7 +93,8 @@ int print_percent(va_list types, char buffer[], int flags, int width, int precis
 }
 /************************* PRINT INT *************************/
 /**
- * print_int - Print int* @types: List of arguments
+ * print_int - Print int
+ * @types: List of arguments
  * @buffer: Buffer array to handle print
  * @flags: Calculates active flags
  * @width: get width
@@ -100,7 +102,7 @@ int print_percent(va_list types, char buffer[], int flags, int width, int precis
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_percent(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_int(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
@@ -130,7 +132,8 @@ int print_percent(va_list types, char buffer[], int flags, int width, int precis
 
 /************************* PRINT BINARY *************************/
 /**
- * print_int - Print int* @types: List of arguments
+ * print_binary - Print int
+ * @types: List of arguments
  * @buffer: Buffer array to handle print
  * @flags: Calculates active flags
  * @width: get width

@@ -28,11 +28,11 @@ int print_pointer(va_list types, char buffer[], int flags, int width, int precis
 	buffer[BUFF_SIZE - 1] = '\0';
 	UNUSED(precision);
 
-	num_addrs = (unsigned long)addrs;
-	while (num_addrs > 0)
+	num_address = (unsigned long)addrs;
+	while (num_address > 0)
 	{
-		buffer[ind--] = map_to[num_addrs % 16];
-		num_addrs /= 16;
+		buffer[ind--] = map_to[num_address % 16];
+		num_address /= 16;
 		length++;
 	}
 
@@ -114,7 +114,6 @@ int print_reverse(va_list types, char buffer[], int flags, int width, int precis
 		UNUSED(precision);
 
 		str = ")Null(";
-		str = ")Null(";
 	}
 	for (i = 0; str[i]; i++);
 
@@ -149,6 +148,7 @@ int print_rot13string(va_list types, char buffer[], int flags, int width, int pr
 	char out[] = "NOPQRSTUVWXYZABEDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(types, char *);
+
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
